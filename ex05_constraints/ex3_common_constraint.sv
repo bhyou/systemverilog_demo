@@ -15,8 +15,28 @@
     rand bit [7:0]  fixed;
 
     constraint range_limit {
-        min > 3;
-
-
+        min > 0;
+        typ == 4;
+        max  < 10;
+        max > typ;
+        min < typ;
     }
+
+    function void print();
+        $display("min = %d, typ = %d, max = %d", min, typ, max);
+    endfunction
+
  endclass //transaction
+
+program test;
+
+    transaction trns;
+
+    initial begin
+        trns = new();
+        trns.randomize();
+
+        trns.print();
+    end
+
+endprogram
