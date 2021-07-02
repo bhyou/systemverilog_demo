@@ -21,6 +21,9 @@ program enumeration;
 
     enum int {write=100, read=200, idle=300  } FSM1, FSM2;
 
+    typedef enum  {run, walk, seat} animals;
+
+    animals dog, cat; 
     initial begin
         traffic_light = 2'b10;
         $display("the status of the traffic light is %s", traffic_light);
@@ -31,9 +34,13 @@ program enumeration;
         $display("the status of the traffic light is %d", traffic_light);
 
         FSM2 = write;
-        $display("the status of the traffic light is %s", FSM2);
-        $display("the status of the traffic light is %d", FSM2);
+        $display("the status of the FSM is %s", FSM2);
+        $display("the status of the FSM is %d", FSM2);
 
+        dog = run;
+        cat = walk;
+        $display("the status of dog is %s", dog);
+        $display("the status of cat is %d", cat);
     end
 endprogram
  
