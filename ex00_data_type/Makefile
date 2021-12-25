@@ -12,10 +12,15 @@ include ../makefile.defs
 comOpt   += -override_timescale=1ps/1ps
 macroOpt += +define+Tdelay=200
 
-top      = top_tb
+top      = array_index
+
 wavefile = vpd
 
 useList  = 0
-filename = hello.v
+filename = enumeration.sv
+filename = bool.sv
+filename = bit_index.sv
+filename = array.sv
+filename = array_index.sv
 
 #filelist = flist.rtl
